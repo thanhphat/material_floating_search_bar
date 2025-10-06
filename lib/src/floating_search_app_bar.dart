@@ -687,7 +687,7 @@ class FloatingSearchAppBarState extends ImplicitlyAnimatedWidgetState<
   @override
   FloatingSearchAppBarStyle get newValue {
     final ThemeData theme = Theme.of(context);
-    final AppBarTheme appBar = theme.appBarTheme;
+    final AppBarThemeData appBar = theme.appBarTheme;
     final TextDirection direction = Directionality.of(context);
 
     return FloatingSearchAppBarStyle(

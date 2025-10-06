@@ -609,8 +609,10 @@ class FloatingSearchBarState extends ImplicitlyAnimatedWidgetState<
     final SizedBox searchBar = SizedBox.expand(
       child: isAvailableSwipeBack
           ? _getSearchBarWidget()
-          : WillPopScope(
-              onWillPop: _onPop,
+          : PopScope(
+              onPopInvokedWithResult: (bool didPop, Object? result) async {
+                await _onPop();
+              },
               child: _getSearchBarWidget(),
             ),
     );
